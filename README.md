@@ -6,12 +6,16 @@ The quickest way to get on board with all the tools you need (we think).
 
 ### Pre-requisites
 
-- mac OS
-- [Ansible](ansible.com)
-
-To install Ansible, you can follow the directions [here](https://docs.ansible.com/ansible/latest/installation_guide/index.html) or run `brew install ansible` if HomeBrew is already installed (if it's not, this Ansible playbook will install HomeBrew for you).
+- macOS
+- bash
 
 ### Running the script
+
+Run the following command in your terminal, which will install all of the necessary prerequisites and the latest ansible playbook.
+
+```sh
+curl -fsSL https://github.com/lonsdaledm/gangway/blob/main/runner.sh | sh
+```
 
 ## Support
 

@@ -3,11 +3,6 @@
   tags:
     - zsh
     - general
-- name: Install HomeBrew
-  shell: curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | sh
-  tags:
-    - brew
-    - general
 - name: Update HomeBrew
   community.general.homebrew:
     update_homebrew: yes
