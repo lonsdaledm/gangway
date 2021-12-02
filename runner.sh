@@ -1,5 +1,7 @@
 #! /bin/bash 
 
+export HOMEBREW_NO_ENV_HINTS=true
+
 echo "Let's get your computer set up!"
 sleep 0.5
 echo
