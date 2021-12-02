@@ -7,6 +7,7 @@
   community.general.homebrew_cask:
     name: slack
     state: present
+    accept_external_apps: true
   tags:
     - general
     - core
@@ -14,6 +15,7 @@
   community.general.homebrew_cask:
     name: iterm2
     state: present
+    accept_external_apps: true
   tags:
     - general
     - terminal
@@ -21,6 +23,7 @@
   community.general.homebrew_cask:
     name: docker
     state: present
+    accept_external_apps: true
   tags:
     - general
     - core
@@ -28,6 +31,7 @@
   community.general.homebrew_cask:
     name: postman
     state: present
+    accept_external_apps: true
   tags:
     - general
     - core
