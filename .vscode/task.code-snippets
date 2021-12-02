@@ -38,7 +38,6 @@
       "    state: ${3|present,upgraded,installed,absent,latest,removed,uninstalled|}",
       "    accept_external_apps: ${4|true,false|}",
       "  tags:",
-      "    - ${TM_FILENAME_BASE/([^0-9^A-z]*)/${1:/lowcase}/}",
       "    - ${5:tag_name}"
     ]
   },
@@ -52,8 +51,29 @@
       "    state: ${3|present,upgraded,installed,absent,latest,removed,uninstalled|}",
       "    accept_external_apps: ${4|true,false|}",
       "  tags:",
-      "    - ${TM_FILENAME_BASE/([^0-9^A-z]*)/${1:/lowcase}/}",
       "    - ${6:tag_name}"
+    ]
+  },
+  "Add Ansible Homebrew Tap": {
+    "scope": "yaml,yml,ansible",
+    "prefix": ["task-homebrew-tap", "task-brew-tap"],
+    "body": [
+      "- name: ${1:task_name}",
+      "  community.general.homebrew_tap:",
+      "    name: ${2:organization_name}",
+      "    state: ${3|present,absent|}",
+      "  tags:",
+      "    - ${6:tag_name}"
+    ]
+  },
+  "Include task file": {
+    "scope": "yaml,yml,ansible",
+    "prefix": ["include", "include-task"],
+    "body": [
+      "- include: ./task/${1:filename}.yaml",
+      "  tags:",
+      "    - ${1: filename}",
+      "    - all"
     ]
   }
 }

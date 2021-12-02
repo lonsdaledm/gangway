@@ -25,5 +25,6 @@ _:warning: These resources are general Ansible resources - resources specific to
 ### Homebrew
 
 - [Homebrew Docs](https://brew.sh/)
-- [Ansible Collection for Homebrew](https://docs.ansible.com/ansible/latest/collections/community/general/homebrew_module.html#parameter-state)
-- [Ansible Collection for Homebrew Cask](https://docs.ansible.com/ansible/latest/collections/community/general/homebrew_cask_module.html#ansible-collections-community-general-homebrew-cask-module)
+- [Ansible Collection for Homebrew](https://docs.ansible.com/ansible/latest/collections/community/general/homebrew_module.html)
+- [Ansible Collection for Homebrew Cask](https://docs.ansible.com/ansible/latest/collections/community/general/homebrew_cask_module.html)
+- [Ansible Collection for Homebrew Tap](https://docs.ansible.com/ansible/latest/collections/community/general/homebrew_tap_module.html)
