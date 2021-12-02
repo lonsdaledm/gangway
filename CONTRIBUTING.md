@@ -19,9 +19,11 @@ _:warning: These resources are general Ansible resources - resources specific to
 
 ### Git
 
-- [Ansible Module](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html)
+- [Ansible Module for Git](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html)
+- [Ansible Module for Git Config](https://docs.ansible.com/ansible/latest/collections/community/general/git_config_module.html#ansible-collections-community-general-git-config-module)
 
 ### Homebrew
 
 - [Homebrew Docs](https://brew.sh/)
-- [Ansible Collection](https://docs.ansible.com/ansible/latest/collections/community/general/homebrew_module.html#parameter-state)
+- [Ansible Collection for Homebrew](https://docs.ansible.com/ansible/latest/collections/community/general/homebrew_module.html#parameter-state)
+- [Ansible Collection for Homebrew Cask](https://docs.ansible.com/ansible/latest/collections/community/general/homebrew_cask_module.html#ansible-collections-community-general-homebrew-cask-module)
