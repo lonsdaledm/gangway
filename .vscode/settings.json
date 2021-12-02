@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["posttrade", "pretrade"]
+  "cSpell.words": ["posttrade", "pretrade"],
+  "editor.suggest.showSnippets": true
 }
