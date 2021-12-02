@@ -11,5 +11,9 @@
         - all
     - include: ./tasks/javascript.yml
       tags:
-        - javascript
+      - javascript
+      - all
+    - include: ./tasks/java.yaml
+      tags:
+        - java
         - all

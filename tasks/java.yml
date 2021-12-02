@@ -1,0 +1,21 @@
+- name: Tap AdoptOpenJdk
+  community.general.homebrew_tap:
+    name: adoptopenjdk/openjdk
+    state: present
+  tags:
+    - backend
+- name: Install Java
+  community.general.homebrew_cask:
+    name: adoptopenjdk11
+    state: present
+    accept_external_apps: true
+  tags:
+    - backend
+- name: Install IntelliJ Idea
+  community.general.homebrew_cask:
+    name: intellij-idea
+    state: present
+    accept_external_apps: true
+  tags:
+    - backend
+    - intellij

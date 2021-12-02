@@ -1,4 +1,11 @@
 {
-  "cSpell.words": ["adoptopenjdk", "posttrade", "pretrade", "tldr"],
+  "cSpell.words": [
+    "adoptopenjdk",
+    "Intelli",
+    "intellij",
+    "posttrade",
+    "pretrade",
+    "tldr"
+  ],
   "editor.suggest.showSnippets": true
 }
