@@ -2,6 +2,14 @@
   # become: true
   tasks:
     - include: ./tasks/general.yml
-      tags: ["general", "all"]
+      tags:
+        - general
+        - all
     - include: ./tasks/extras.yml
-      tags: ["extras", "all"]
+      tags:
+        - extras
+        - all
+    - include: ./tasks/javascript.yml
+      tags:
+        - javascript
+        - all
