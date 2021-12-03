@@ -4,6 +4,7 @@
     state: present
   tags:
   - backend
+  - java_language
 - name: Install Java
   community.general.homebrew_cask:
     name: adoptopenjdk11
@@ -11,6 +12,7 @@
     accept_external_apps: true
   tags:
   - backend
+  - java_language
 - name: Install IntelliJ Idea
   community.general.homebrew_cask:
     name: intellij-idea

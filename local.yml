@@ -13,7 +13,7 @@
       tags:
       - javascript
       - all
-    - include: ./tasks/java.yaml
+    - include: ./tasks/java.yml
       tags:
       - java
       - all
