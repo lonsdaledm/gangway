@@ -1,18 +1,18 @@
 - name: Check Oh My Zsh Installation
-  stat:
-    path: "{{ ansible_env.HOME }}/.oh-my-zsh"
-  register: omz_path
+  shell: >
+    [ ! $(command -v omz) ] | echo
+  register: omz_install
   tags:
   - omz
   - terminal
   - general
 - name: Install Oh My Zsh
   shell: curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
+  when: omz_install|bool
   tags:
   - omz
   - terminal
   - general
-  when: not omz_path.stat.exists
 - name: Install Slack
   community.general.homebrew_cask:
     name: slack
