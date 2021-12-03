@@ -1,6 +1,6 @@
 # Gangway
 
-The quickest way to get on board with all the tools you need (we think).
+The quickest way to get on board with all the tools you need (we think) and some you don't.
 
 ## Running the Script
 
@@ -9,7 +9,7 @@ The quickest way to get on board with all the tools you need (we think).
 - macOS
 - bash
 
-### Running the script
+### Initial computer setup
 
 Run the following command in your terminal, which will install all of the necessary prerequisites and the latest ansible playbook.
 
