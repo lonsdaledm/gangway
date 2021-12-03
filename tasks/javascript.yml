@@ -6,11 +6,20 @@
   tags:
   - frontend
   - vscode
+- name: Check for Node Installation
+  shell: >
+    [ ! $(command -v node) ] | echo
+  register: node_install
+  tags:
+  - frontend
+  - node
+  - nvm
 - name: Install NVM
   shell: >
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | sh
   args:
     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+  when: node_install|bool
   tags:
   - frontend
   - node
@@ -19,6 +28,7 @@
   shell: echo "typescript\nyarn\n" > "{{ ansible_env.HOME }}/.nvm/default-packages"
   args:
     creates: "{{ansible_env.HOME}}/.nvm/default-packages"
+  when: node_install|bool
   tags:
   - frontend
   - node
@@ -28,6 +38,7 @@
   shell: source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install 14
   args:
     creates: "{{ansible_env.HOME}}/.nvm/alias"
+  when: node_install|bool
   tags:
   - frontend
   - node
