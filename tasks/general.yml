@@ -45,3 +45,18 @@
   tags:
   - general
   - core
+- name: Install Chrome
+  community.general.homebrew_cask:
+    name: google-chrome
+    state: present
+    accept_external_apps: true
+  tags:
+    - general
+    - core
+- name: Install Zoom
+  community.general.homebrew_cask:
+    name: zoom
+    state: present
+    accept_external_apps: true
+  tags:
+    - general
