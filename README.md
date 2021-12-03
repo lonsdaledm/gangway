@@ -14,7 +14,7 @@ The quickest way to get on board with all the tools you need (we think) and some
 Run the following command in your terminal, which will install all of the necessary prerequisites and the latest ansible playbook.
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://github.com/lonsdaledm/gangway/blob/main/runner.sh)"
+/bin/bash -c "$(curl -fsSL https://github.com/lonsdaledm/gangway/raw/main/runner.sh)"
 ```
 
 ## Support
