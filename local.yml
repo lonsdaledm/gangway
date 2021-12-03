@@ -1,19 +1,18 @@
 - hosts: ["localhost"]
   # become: true
   tasks:
-    - include: ./tasks/general.yml
+    - import_tasks: ./tasks/general.yml
       tags:
       - general
       - all
-    - include: ./tasks/extras.yml
+    - import_tasks: ./tasks/extras.yml
       tags:
       - extras
-      - all
-    - include: ./tasks/javascript.yml
+    - import_tasks: ./tasks/javascript.yml
       tags:
       - javascript
       - all
-    - include: ./tasks/java.yml
+    - import_tasks: ./tasks/java.yml
       tags:
       - java
       - all
