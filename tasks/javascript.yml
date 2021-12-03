@@ -20,7 +20,8 @@
   - frontend
   - node
 - name: Install Node
-  shell: nvm install node 14
+  # need to update the PATH
+  shell: source {{ ansible_env.HOME }}/.zshrc && nvm install 14)
   tags:
   - frontend
   - node
