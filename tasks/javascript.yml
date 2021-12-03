@@ -14,14 +14,17 @@
   tags:
   - frontend
   - node
+  - nvm
 - name: Set default global packages
   shell: echo "typescript\nyarn\n" > "{{ ansible_env.HOME }}/.nvm/default-packages"
   tags:
   - frontend
   - node
+  - nvm
 - name: Install Node
   # need to update the PATH
   shell: source {{ ansible_env.HOME }}/.zshrc && nvm install 14)
   tags:
   - frontend
   - node
+  - nvm
