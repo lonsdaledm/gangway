@@ -1,37 +1,37 @@
 - name: Install Oh My Zsh
   shell: curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
   tags:
-    - terminal
-    - general
+  - terminal
+  - general
 - name: Install Slack
   community.general.homebrew_cask:
     name: slack
     state: present
     accept_external_apps: true
   tags:
-    - general
-    - core
+  - general
+  - core
 - name: Install ITerm2
   community.general.homebrew_cask:
     name: iterm2
     state: present
     accept_external_apps: true
   tags:
-    - general
-    - terminal
+  - general
+  - terminal
 - name: Install Docker
   community.general.homebrew_cask:
     name: docker
     state: present
     accept_external_apps: true
   tags:
-    - general
-    - core
+  - general
+  - core
 - name: Install Postman
   community.general.homebrew_cask:
     name: postman
     state: present
     accept_external_apps: true
   tags:
-    - general
-    - core
+  - general
+  - core

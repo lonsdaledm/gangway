@@ -2,20 +2,17 @@
   community.general.homebrew:
     name: fzf
     state: present
-    accept_external_apps: true
   tags:
-    - never
+  - never
 - name: Install HTOP
   community.general.homebrew:
     name: htop
     state: present
-    accept_external_apps: true
   tags:
-    - never
+  - never
 - name: Install Terminal TLDR
   community.general.homebrew:
     name: tldr
     state: present
-    accept_external_apps: true
   tags:
-    - never
+  - never

@@ -4,23 +4,23 @@
     state: present
     accept_external_apps: true
   tags:
-    - frontend
-    - vscode
+  - frontend
+  - vscode
 - name: Install NVM
   shell: >
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | sh
   args:
     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
   tags:
-    - frontend
-    - node
+  - frontend
+  - node
 - name: Set default global packages
   shell: echo "typescript\n" > $NVM_DIR/default-packages
   tags:
-    - frontend
-    - node
+  - frontend
+  - node
 - name: Install Node
   shell: nvm install node 14
   tags:
-    - frontend
-    - node
+  - frontend
+  - node

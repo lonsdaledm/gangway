@@ -3,17 +3,17 @@
   tasks:
     - include: ./tasks/general.yml
       tags:
-        - general
-        - all
+      - general
+      - all
     - include: ./tasks/extras.yml
       tags:
-        - extras
-        - all
+      - extras
+      - all
     - include: ./tasks/javascript.yml
       tags:
       - javascript
       - all
     - include: ./tasks/java.yaml
       tags:
-        - java
-        - all
+      - java
+      - all
