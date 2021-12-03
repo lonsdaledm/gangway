@@ -71,12 +71,17 @@ then
     brew install --quiet gh jq ansible
 fi
 
+sleep 1
+echo
+echo "Dependencies installed..."
+
 if [[ "$(gh config list)" != *"ssh"* ]]
 then
-    # This command will prompt the user to connect to GH via a web browser, generating an SSH key as needed
+    echo
     echo "Signing you into the GitHub CLI..."
-    echo "You don't need to use this CLI in your day-to-day work, but it is key to ensuring that this script works appropriately."
+    echo "You don't need to use this CLI in your day-to-day work, but it is key to ensuring that this script is successful."
     sleep 2
+    # This command will prompt the user to connect to GH via a web browser, generating an SSH key as needed
     gh auth login
 fi
 
