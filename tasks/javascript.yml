@@ -15,7 +15,7 @@
   - frontend
   - node
 - name: Set default global packages
-  shell: echo "typescript\n" > $NVM_DIR/default-packages
+  shell: echo "typescript\nyarn\n" > "{{ ansible_env.HOME }}/.nvm/default-packages"
   tags:
   - frontend
   - node
