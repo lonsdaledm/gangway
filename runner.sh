@@ -53,6 +53,20 @@ then
     echo
     echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    # Homebrew on M1 macs installs to /opt/homebrew instead of /usr/local, so won't be picked up
+    # without some help
+    if [[ $(command -v brew) == "" ]] && sysctl -n machdep.cpu.brand_string 2> /dev/null | grep -q "^Apple M1"
+    then
+        # Modify both the bash and zsh profiles to make sure the configuration gets picked up
+        # regardless of shell
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> tee -a ~/.profile
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> tee -a ~/.zprofile
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+
+        # Many casks require Rosetta to be installed before they can run
+        sudo softwareupdate --install-rosetta
+    fi
 else
     echo
     echo "Updating Homebrew..."
