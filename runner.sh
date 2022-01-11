@@ -21,12 +21,12 @@ fi
 # If this is using an M1 Mac but is running a Rosetta-based program (either the shell or the
 # terminal), the `uname -p` will not return 'arm' and we'll know that Rosetta is already installed.
 # Otherwise there aren't very many good ways to check for Rosetta's installation.
-echo
-echo "Let's install Rosetta for M1 chip compatibility..."
-sleep 0.5
-
 if "$IS_M1_MAC" && [[ $(uname -p) == "arm" ]]
 then
+    echo
+    echo "Let's install Rosetta for M1 chip compatibility..."
+    sleep 0.5
+
     sudo softwareupdate --install-rosetta
 fi
 
@@ -78,7 +78,7 @@ then
 
     # Homebrew on M1 macs installs to /opt/homebrew instead of /usr/local, so won't be picked up
     # without some help
-    if "$IS_M1_MAC" && command -v brew 2 > /dev/null
+    if "$IS_M1_MAC" && command -v brew >/dev/null
     then
         # Modify both the bash and zsh profiles to make sure the configuration gets picked up
         # regardless of shell
@@ -91,6 +91,7 @@ else
     echo "Updating Homebrew..."
     brew update > /dev/null
 fi
+
 
 echo
 echo "Homebrew is ready for use"
