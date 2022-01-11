@@ -9,6 +9,28 @@ echo
 echo "This process will ask a few questions before performing a few provisional installations.  Once you see a message that says, 'Feel free to step away from your computer', you won't need to provide any more input as the process completes."
 sleep 2
 
+
+export IS_M1_MAC=false
+# To make sure we don't rely on native shell behavior, use sysctl to try to find the system
+# architecture: https://stackoverflow.com/a/69853058
+if sysctl -n machdep.cpu.brand_string 2> /dev/null | grep -q "^Apple M1"
+then
+    export IS_M1_MAC=true
+fi
+
+# If this is using an M1 Mac but is running a Rosetta-based program (either the shell or the
+# terminal), the `uname -p` will not return 'arm' and we'll know that Rosetta is already installed.
+# Otherwise there aren't very many good ways to check for Rosetta's installation.
+echo
+echo "Let's install Rosetta for M1 chip compatibility..."
+sleep 0.5
+
+if "$IS_M1_MAC" && [[ $(uname -p) == "arm" ]]
+then
+    sudo softwareupdate --install-rosetta
+fi
+
+
 echo
 echo "Let's check your git configuration..."
 sleep 0.5
@@ -56,16 +78,13 @@ then
 
     # Homebrew on M1 macs installs to /opt/homebrew instead of /usr/local, so won't be picked up
     # without some help
-    if [[ $(command -v brew) == "" ]] && sysctl -n machdep.cpu.brand_string 2> /dev/null | grep -q "^Apple M1"
+    if "$IS_M1_MAC" && command -v brew 2 > /dev/null
     then
         # Modify both the bash and zsh profiles to make sure the configuration gets picked up
         # regardless of shell
         echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> tee -a ~/.profile
         echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> tee -a ~/.zprofile
         eval "$(/opt/homebrew/bin/brew shellenv)"
-
-        # Many casks require Rosetta to be installed before they can run
-        sudo softwareupdate --install-rosetta
     fi
 else
     echo
