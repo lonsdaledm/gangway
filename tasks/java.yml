@@ -15,7 +15,7 @@
   - java_language
 - name: Install IntelliJ Idea
   community.general.homebrew_cask:
-    name: intellij-idea
+    name: intellij-idea-ce
     state: present
     accept_external_apps: true
   tags:
